@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="../vendor/jinnguyen/easyui/themes/black/easyui.css">
+    <link rel="stylesheet" type="text/css" href="../vendor/jinnguyen/easyui/themes/icon.css">
+    <link rel="stylesheet" type="text/css" href="../src/mmt.css">
+    <style>
+        #text_number span{margin-left: 10px;font-size: 50px;}
+    </style>
+</head>
+<body>
+<a href="#" class="mmt">MMT POPUP (Multi)</a> <br /><br />
+<a href="#" class="mmt" data-id="1" data-name="Name Mod 1" data-alt="Alt Mod 1" data-description="Desc Mod 1">MMT POPUP (Single)</a> <br /><br />
+<a href="#" class="mmt_click" data-id="2" data-name="Name Mod 2" data-alt="Alt Mod 2" data-description="Desc Mod 2">MMT Click</a>
+<script type="text/javascript" src="../vendor/components/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../vendor/jinnguyen/easyui/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="../src/mmt.js"></script>
+<script type="text/javascript">
+    function insertFn(data) {
+        console.log(data)
+    }
+    $('.mmt').MMT({
+        MediaLibraries_GridMultiSelect: true,
+        MediaLibraries_GridUrl: './server/grid.php',
+        MediaUpload_Url: './server/upload.php',
+        MediaLibraries_UpdateUrl: './server/upload.php',
+        MediaLibraries_FilterBox_Url: './server/tree.php',
+        MediaLibraries_InsertFn: insertFn,
+        FromUrl_InsertFn: insertFn
+    });
+
+    $('.mmt_click').click(function () {
+        $.MMT(this, {
+            MediaLibraries_GridMultiSelect: false,
+            MediaLibraries_GridUrl: './server/grid.php',
+            MediaUpload_Url: './server/upload.php',
+            MediaLibraries_FilterBox_Url: './server/tree.php',
+            MediaLibraries_InsertFn: insertFn,
+            FromUrl_InsertFn: insertFn
+        });
+    });
+</script>
+
+<div class="easyui-panel" title="Test">dsfasdfa</div>
+</body>
+</html>

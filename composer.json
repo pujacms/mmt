@@ -1,0 +1,18 @@
+{
+  "name": "jinnguyen/mmt",
+  "description": "MMT is Media Manage Tool, help to manage media from your application, base on EasyUI.",
+  "type": "library",
+  "license": "Apache License 2.0",
+  "keywords": ["MMT", "Media Manage Tool"],
+  "authors": [
+      {
+          "name": "Jin Nguyen",
+          "email": "w2ajax@gmail.com"
+      }
+  ],
+  "minimum-stability": "stable",
+  "require": {
+    "jinnguyen/easyui": "1.5.0",
+    "components/jquery": ">=2.1"
+  }
+}
